@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Rubik:wght@300;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        /* border: 1px solid red; */
+    }
+
+    html {
+        scroll-behavior: smooth;
+        @apply bg-white;
+        @apply font-body;
+        font-size: clamp(1em, 0.2083vw + 0.9437em, 1.0625em);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-title;
+    }
+
+    .header{
+        background-image: url('../public/bg.webp');
+    }
+
+    .herro-section {
+        height: calc(100vh - 67px + 30px);
+    }
+
+    @media screen and (min-width: 640px) {
+        .herro-section {
+            height: calc(100vh - 67px + 30px);
+        }
+    }
+
+    .menu-bar-links {
+        height: calc(100vh - 91px);
+    }
+
+    .titles {
+        -webkit-text-stroke: 1px #4c84ff;
+    }
+
+    .transactions {
+        height: calc(100vh - 78px - 33px);
+    }
+
+    .news {
+        height: calc(100vh - 78px - 33px - 285px);
+    }
+
+    .savings {
+        height: calc(100vh - 315px);
+    }
+
+    .action {
+        @apply rounded-normal;
+        @apply shadow-md;
+        @apply hover:shadow-lg;
+    }
+
+    .savingForm {
+        backdrop-filter: blur(4px);
+    }
+
+    .spinnerFullpage {
+        height: 100vh;
+        @apply bg;
+    }
+
+    .spinnerContainer {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .spinner {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background: conic-gradient(#0000 10%, #fff);
+        -webkit-mask: radial-gradient(
+            farthest-side,
+            #0000 calc(100% - 8px),
+            #000 0
+        );
+        animation: rotate 1.5s infinite linear;
+    }
+
+    @keyframes rotate {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+
+    progress {
+        appearance: none; /* Remove default appearance */
+        border: none; /* Remove border */
+        @apply bg-white;
+        @apply border-[1px] border-solid; /* Background color of the progress bar */
+        @apply rounded-normal; /* Rounded corners */
+        overflow: hidden; /* Hide overflowing content */
+    }
+
+    /* Style the progress bar's value (filled part) */
+    progress::-webkit-progress-value {
+        @apply bg-blue-50; /* Color of the filled part */
+        @apply rounded-normal; /* Rounded corners */
+    }
+
+    /* Style the progress bar's background (unfilled part) */
+    progress::-webkit-progress-bar {
+        @apply bg-white;
+        @apply border-[1px] border-solid; /* Background color of the progress bar */
+        @apply rounded-normal; /* Rounded corners */
+    }
+
+    @media screen and (max-width: 767px) {
+        div.action {
+            border: none;
+            @apply bg;
+            @apply text-white;
+            @apply rounded-normal;
+        }
+
+        h1.titles {
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            z-index: 1;
+        }
+    }
+}
